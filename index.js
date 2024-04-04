@@ -58,7 +58,7 @@ function createPourOver (strength, weight) {
 }
 
 function clearDivs () {
-  document.getElementById("weight").innerHTML = ""
+  document.getElementById("coffe-weight").innerHTML = ""
   document.getElementById("init").innerHTML = ""
   document.getElementById("pour-over").innerHTML = ""
 }
