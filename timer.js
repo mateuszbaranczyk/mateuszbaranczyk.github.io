@@ -1,7 +1,7 @@
 const countdownEl = document.querySelector(".countdown");
 const progressBarEl = document.querySelector(".progress");
 
-let remainingTime = 60; // seconds
+let remainingTime = 210; // seconds
 const totalTime = remainingTime;
 
 function countdown() {

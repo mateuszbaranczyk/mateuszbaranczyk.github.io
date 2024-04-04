@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Coffe timer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -21,8 +22,7 @@
         <input type="radio" id="sweetness-button" name="sweetness" value="sweeter">Sweeter</input>
         <input type="radio" id="sweetness-button" name="sweetness" value="brighter">Brighter</input>
         <br>
-        <button type="button" onclick="calculate()">Calculate</button>
-        
+        <button for="toggle" type="button" onclick="calculate()">Calculate</button>
     </form>
 </div>
 <div class="coffe-weight" id="coffe-weight">
@@ -30,6 +30,15 @@
 </div>
 <div class="pour" id="init"></div>
 <div class="pour" id="pour-over"></div>
+<button class="timer" type="button" onclick="countdown()">Start!</button>
+    <div class="timer">
+        <div class="progress-bar">
+            <div class="progress"></div>
+            </div>
+            <span class="countdown"></span>
+        </div>
+    </div>
+<script src="timer.js"></script>
 <script src="index.js"></script>
 </body>
 </html>

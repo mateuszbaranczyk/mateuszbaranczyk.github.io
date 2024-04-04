@@ -54,10 +54,17 @@ function createPourOver (strength, weight) {
     document.getElementById("pour-over").innerHTML += "<p> 4st pour "  + Math.round(restWater / 3) + " grams of water.</p>";
     document.getElementById("pour-over").innerHTML += "<p> 5st pour "  + Math.round(restWater / 3) + " grams of water.</p>";
   }
+  showTimer()
 }
 
 function clearDivs () {
   document.getElementById("weight").innerHTML = ""
   document.getElementById("init").innerHTML = ""
   document.getElementById("pour-over").innerHTML = ""
+}
+
+function showTimer () {
+  let timer = document.getElementsByClassName("timer")
+  let div = Object.entries(timer)
+  div.forEach((element) => {element[1].style.visibility = "visible"});
 }
