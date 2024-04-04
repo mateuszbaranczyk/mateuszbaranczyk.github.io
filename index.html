@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffe timer</title>
+</head>
+<body>
+
+<div class="form">
+    How much coffe would you like?<br><br>
+    <form>
+        <label>Weight:</label>
+        <input type="text" id="weight" placeholder="20 (g)">
+        <br>
+        <label>Strength:</label>
+        <input type="radio" id="strength-button" name="strength" value="soft">Soft</input>
+        <input type="radio" id="strength-button" name="strength" value="medium">Medium</input>
+        <input type="radio" id="strength-button" name="strength" value="strong">Strong</input>
+        <br>
+        <label>Sweetness:</label>
+        <input type="radio" id="sweetness-button" name="sweetness" value="standard">Standard</input>
+        <input type="radio" id="sweetness-button" name="sweetness" value="sweeter">Sweeter</input>
+        <input type="radio" id="sweetness-button" name="sweetness" value="brighter">Brighter</input>
+        <br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    
+    <script src="index.js"></script>
+</div>
+
+</body>
+</html>
