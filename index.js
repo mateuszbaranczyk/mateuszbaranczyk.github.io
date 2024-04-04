@@ -7,6 +7,7 @@ function calculate () {
   strength = document.querySelector('input[name="strength"]:checked').value;
   sweetness = document.querySelector('input[name="sweetness"]:checked').value;
   
+  clearDivs()
   getCoffeWeight(weight)
   createInitialPour(sweetness, weight)
   createPourOver(strength, weight)
@@ -55,3 +56,8 @@ function createPourOver (strength, weight) {
   }
 }
 
+function clearDivs () {
+  document.getElementById("weight").innerHTML = ""
+  document.getElementById("init").innerHTML = ""
+  document.getElementById("pour-over").innerHTML = ""
+}
