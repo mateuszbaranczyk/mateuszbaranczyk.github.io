@@ -11,21 +11,21 @@
 
     <div class="full-body">
         
-        <div class="form container">
+        <div class="container">
             <form>
                 <p>How much coffe would you like?</p>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="weight">Weight:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text" id="weight" placeholder="200 (g)">
+                        <label class="col-sm-2 col-form-label" for="weight">Weight</label>
+                        <div class="col-sm-2">
+                            <input class="form-control" type="text" id="weight" placeholder="300">
                         </div>
                     </div>    
                     <div class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-2 pt-0">Strength:</legend>
+                                <legend class="col-form-label col-sm-2 pt-0">Strength</legend>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="strength-button" name="strength" value="soft" checked>
+                                        <input class="form-check-input" type="radio" id="strength-button" name="strength" value="soft">
                                         <label class="form-check-label" for="strength-button">Soft</label>
                                     </div>
                                     <div class="form-check">
@@ -33,7 +33,7 @@
                                         <label class="form-check-label" for="strength-button">Medium</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="strength-button" name="strength" value="strong">
+                                        <input class="form-check-input" type="radio" id="strength-button" name="strength" value="strong" checked>
                                         <label class="form-check-label" for="strength-button">Strong</label>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">Sweetness:</legend>
+                            <legend class="col-form-label col-sm-2 pt-0">Sweetness</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" id="sweetness-button" name="sweetness" value="standard" checked>
@@ -68,7 +68,9 @@
             <div class="pour" id="pour-over"><ul></ul></div>
             <div class="timer">
                 <div class="wrapper">
-                    <p><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
+                    <h4>Timer</h4>
+
+                    <h3><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h3>
                     <button class="btn btn-primary" id="button-start">Start</button>
                     <button class="btn btn-primary" id="button-stop">Stop</button>
                     <button class="btn btn-primary" id="button-reset">Reset</button>
