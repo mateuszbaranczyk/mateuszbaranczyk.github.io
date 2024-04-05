@@ -9,6 +9,7 @@ window.onload = function () {
   var buttonStart = document.getElementById('button-start');
   var buttonStop = document.getElementById('button-stop');
   var buttonReset = document.getElementById('button-reset');
+
   var Interval ;
 
   buttonStart.onclick = function() {
@@ -24,6 +25,7 @@ window.onload = function () {
 
   buttonReset.onclick = function() {
      clearInterval(Interval);
+     resetStyle();
     tens = "00";
   	seconds = "00";
     minutes = "00";
@@ -31,11 +33,41 @@ window.onload = function () {
   	appendSeconds.innerHTML = seconds;
   }
   
-   
+  function resetStyle () {
+    let divs = [first, seconds, second, third, fourth, fiveth];
+
+    function noneStyle (div) {
+      if (div) {
+        div.style = ""
+      }
+    }
+
+    divs.forEach((div) => noneStyle(div))
+    // first.style = "";
+    // second.style = "";
+    // third.style = "";
+    // fourth.style = "";
+    // fiveth.style = "";
+  }
+
+  function setStyle (div) {
+    if (div) {
+    div.style.marginLeft = "15px";
+    div.style.fontWeight = "bold";
+    }
+  }
   
   function startTimer () {
-    tens++; 
+    var first = document.getElementById('first') || null;
+    var second = document.getElementById('second') || null;
+    var third = document.getElementById('third') || null;
+    var fourth = document.getElementById('fourth') || null;
+    var fiveth = document.getElementById('fiveth') || null;
     
+    tens++; 
+    if (seconds === 0) {
+      setStyle(first)
+    };
     if(tens <= 9){
       appendTens.innerHTML = "0" + tens;
     }
@@ -57,13 +89,32 @@ window.onload = function () {
       appendSeconds.innerHTML = seconds;
     }
 
+    if (seconds === 45){
+      resetStyle()
+      setStyle(second)
+    }
+
     if (seconds > 59) {
       minutes ++;
       seconds = 0;
       appendMinutes.innerHTML = "0" + minutes;
     }
+
+    if (seconds === 30 && minutes === 1) {
+      resetStyle()
+      setStyle(third)
+    }
+    if (seconds === 15 && minutes === 2) {
+      resetStyle()
+      setStyle(fourth)
+    }
+    if (seconds === 45 && minutes === 2) {
+      resetStyle()
+      setStyle(fiveth)
+    }
+    if (seconds === 30 && minutes === 3) {
+      resetStyle()
+    }
   
   }
-  
-
 }
