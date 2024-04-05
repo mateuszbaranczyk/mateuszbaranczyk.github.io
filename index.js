@@ -38,22 +38,23 @@ function createInitialPour (sweetness, weight) {
 }
 
 function insertInitPourHtml (stPour, ndPour) {
-  document.getElementById("init").innerHTML += "<li> 1st pour "  + Math.round(stPour) + " grams of water.</li>";
-  document.getElementById("init").innerHTML += "<li> 2nd pour " + Math.round(ndPour) + " grams of water.</li>";
+  document.getElementById("init").innerHTML += "<li> 1st pour "  + Math.round(stPour) + " grams of water (0:00)</li>";
+  document.getElementById("init").innerHTML += "<li> 2nd pour " + Math.round(ndPour) + " grams of water (0:45)</li>";
 }
 
 function createPourOver (strength, weight) {
   let restWater = Math.round(weight * 0.6)
   if (strength === "soft") {
-    document.getElementById("pour-over").innerHTML += "<li> 3st pour "  + Math.round(restWater) + " grams of water.</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 3rd pour "  + Math.round(restWater) + " grams of water (1:30)</li>";
   } else if (strength === "medium"){
-    document.getElementById("pour-over").innerHTML += "<li> 3st pour "  + Math.round(restWater / 2) + " grams of water.</li>";
-    document.getElementById("pour-over").innerHTML += "<li> 4st pour "  + Math.round(restWater / 2) + " grams of water.</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 3rd pour "  + Math.round(restWater / 2) + " grams of water (1:30)</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 4th pour "  + Math.round(restWater / 2) + " grams of water (2:15)</li>";
   } else {
-    document.getElementById("pour-over").innerHTML += "<li> 3st pour "  + Math.round(restWater / 3) + " grams of water.</li>";
-    document.getElementById("pour-over").innerHTML += "<li> 4st pour "  + Math.round(restWater / 3) + " grams of water.</li>";
-    document.getElementById("pour-over").innerHTML += "<li> 5st pour "  + Math.round(restWater / 3) + " grams of water.</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 3rd pour "  + Math.round(restWater / 3) + " grams of water (1:30)</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 4th pour "  + Math.round(restWater / 3) + " grams of water (2:15)</li>";
+    document.getElementById("pour-over").innerHTML += "<li> 5th pour "  + Math.round(restWater / 3) + " grams of water (2:45)</li>";
   }
+  document.getElementById("pour-over").innerHTML += "<p>Remove the coffee dripper after 3:30</p>"
   showTimer()
 }
 
