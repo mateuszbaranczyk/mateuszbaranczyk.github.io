@@ -62,7 +62,7 @@ window.onload = function () {
     }
     
     tens++; 
-    if (seconds < 46 && minutes === 0) {
+    if (seconds === 0 && minutes === 0) {
       resetStyle()
       setStyle(first)
     };
@@ -87,7 +87,7 @@ window.onload = function () {
       appendSeconds.innerHTML = seconds;
     }
 
-    if (seconds === 45){
+    if (seconds === 45 && minutes === 0){
       resetStyle()
       setStyle(second)
     }
@@ -95,6 +95,7 @@ window.onload = function () {
     if (seconds > 59) {
       minutes ++;
       seconds = 0;
+      appendSeconds.innerHTML = "0" + 0;
       appendMinutes.innerHTML = "0" + minutes;
     }
 
