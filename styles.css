@@ -1,21 +1,26 @@
-.form {
-    container-type:inline-size;
-}
-
 .input.form[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-  }
+  };
 
 .full-body {
   width: 800px;
   margin: 30px auto;
-}
+};
 
 .wrapper {
   width: 800px;
   margin: 30px auto;
   };
-  
+
+.info {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ };

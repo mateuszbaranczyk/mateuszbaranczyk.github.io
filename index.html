@@ -4,20 +4,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Coffe timer</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+    .info {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: darkorange;
+        color: white;
+        text-align: center;
+        };
+
+
+    </style>
+    <style>
+    .container-fluid.head {
+        background-color: green;
+        left: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        position: relative;
+    };
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/starter-template/">
+
 </head>
 <body>
+    <div class="container-fluid head">
+        <div>
+            <h1>Coffe timer</h1>
+            <p class="lead">The V60 "4:6" recipe.</p>
+        </div>
+    </div>
 
-    <div class="full-body">
+    <div class="mt-5">
         
         <div class="container">
             <form>
                 <p>How much coffe would you like?</p>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="weight">Weight</label>
-                        <div class="col-sm-2">
-                            <input class="form-control" type="text" id="weight" placeholder="300">
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text" id="weight" placeholder="grams">
                         </div>
                     </div>    
                     <div class="form-group">
@@ -80,5 +110,9 @@
         </div>
     <script src="timer.js"></script>
     <script src="index.js"></script>
+<div class="info">
+    <p>Footer</p>
+</div>
 </body>
+
 </html>
