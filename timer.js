@@ -25,30 +25,14 @@ window.onload = function () {
 
   buttonReset.onclick = function() {
      clearInterval(Interval);
-     resetStyle();
     tens = "00";
   	seconds = "00";
     minutes = "00";
     appendTens.innerHTML = tens;
   	appendSeconds.innerHTML = seconds;
+    appendMinutes.innerHTML = minutes;
   }
   
-  function resetStyle () {
-    let divs = [first, seconds, second, third, fourth, fiveth];
-
-    function noneStyle (div) {
-      if (div) {
-        div.style = ""
-      }
-    }
-
-    divs.forEach((div) => noneStyle(div))
-    // first.style = "";
-    // second.style = "";
-    // third.style = "";
-    // fourth.style = "";
-    // fiveth.style = "";
-  }
 
   function setStyle (div) {
     if (div) {
@@ -63,9 +47,23 @@ window.onload = function () {
     var third = document.getElementById('third') || null;
     var fourth = document.getElementById('fourth') || null;
     var fiveth = document.getElementById('fiveth') || null;
+
+    function resetStyle () {
+      let divs = [first, seconds, second, third, fourth, fiveth];
+  
+      function noneStyle (div) {
+        if (typeof(div) === "object") {
+          div.style.marginLeft = "initial";
+          div.style.fontWeight = "normal";
+        }
+      }
+  
+      divs.forEach((div) => noneStyle(div))
+    }
     
     tens++; 
-    if (seconds === 0) {
+    if (seconds < 45) {
+      resetStyle()
       setStyle(first)
     };
     if(tens <= 9){
