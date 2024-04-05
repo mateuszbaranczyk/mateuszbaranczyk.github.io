@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="full-body container">
+    <div class="full-body">
         
         <div class="form container">
             <form>
@@ -66,12 +66,13 @@
             <div class="coffe-weight" id="coffe-weight"></div>
             <div class="pour" id="init"><ul></ul></div>
             <div class="pour" id="pour-over"><ul></ul></div>
-            <button class="btn btn-primary timer" type="button" onclick="countdown()">Start!</button>
             <div class="timer">
-                <div class="progress-bar">
-                    <div class="progress"></div>
-                </div>
-                <span class="countdown"></span>
+                <div class="wrapper">
+                    <p><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
+                    <button class="btn btn-primary" id="button-start">Start</button>
+                    <button class="btn btn-primary" id="button-stop">Stop</button>
+                    <button class="btn btn-primary" id="button-reset">Reset</button>
+                </div> 
             </div>
             </div>
         </div>

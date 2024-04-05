@@ -14,10 +14,6 @@
     width: 0%;
   }
 
-.timer {
-    visibility: hidden;
-}
-
 .form {
     container-type:inline-size;
 }
@@ -28,3 +24,19 @@
     margin: 8px 0;
     box-sizing: border-box;
   }
+
+.full-body {
+  width: 800px;
+  margin: 30px auto;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 30px auto;
+  };
+  
+  #seconds, #minutes{
+    font-size:2em;
+  };
+  #tens{visibility: hidden;};
+    
