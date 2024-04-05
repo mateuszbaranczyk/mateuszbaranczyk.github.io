@@ -62,7 +62,7 @@ window.onload = function () {
     }
     
     tens++; 
-    if (seconds < 45) {
+    if (seconds < 46 && minutes === 0) {
       resetStyle()
       setStyle(first)
     };
