@@ -6,7 +6,6 @@
     <title>Coffe timer</title>
     <style>
     .info {
-        position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -29,8 +28,8 @@
     };
     </style>
     <style>
-    .mt-5.body-content {
-            display: flex;
+    .container.content {
+            /* display: flex; */
             justify-content: center;
             align-items: center;
         }
@@ -47,9 +46,8 @@
         </div>
     </div>
 
-    <div class="mt-5 body-content">
+    <div class="container">
         
-        <div class="container">
             <form>
                 <p>How much coffe would you like?</p>
                     <div class="form-group row">
@@ -98,14 +96,12 @@
                     </div>
                         <button class="btn btn-primary calc" type="button" onclick="calculate()">Calculate</button>
             </form>
-        </div>
-        <div class="recipe container">
             <br>
             <div class="coffe-weight" id="coffe-weight"></div>
             <div class="pour" id="init"><ul></ul></div>
             <div class="pour" id="pour-over"><ul></ul></div>
             <div class="timer">
-                <div class="wrapper">
+                <div class="container content">
                     <h4>Timer</h4>
 
                     <h3><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h3>
@@ -114,12 +110,11 @@
                     <button class="btn btn-primary" id="button-reset">Reset</button>
                 </div> 
             </div>
-            </div>
     </div>
     <script src="timer.js"></script>
     <script src="index.js"></script>
 <div class="info">
-    <p>Footer</p>
+    <p>made by kundziorro</p>
 </div>
 </body>
 
