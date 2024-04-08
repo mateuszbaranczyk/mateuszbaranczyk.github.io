@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Coffee timer</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+</head>
+
+<body>
+    <!-- Page content-->
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-light">
+                <p>How much coffe would you like?</p>
+                <div class="form-floating mb-3">
+                  <input class="form-control" type="text" id="weight" placeholder="grams">
+                  <label for="floatingInput">Weight</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <div class="form-group">
+                      <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">Strength</legend>
+                          <div class="col-sm-10">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="strength-button" name="strength" value="soft">
+                                  <label class="form-check-label" for="strength-button">Soft</label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="strength-button" name="strength" value="medium">
+                                  <label class="form-check-label" for="strength-button">Medium</label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="strength-button" name="strength" value="strong" checked>
+                                  <label class="form-check-label" for="strength-button">Strong</label>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">Sweetness</legend>
+                          <div class="col-sm-10">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="sweetness-button" name="sweetness" value="standard" checked>
+                                  <label class="form-check-label" for="sweetness-button">Standard</label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="sweetness-button" name="sweetness" value="sweeter">
+                                  <label class="form-check-label" for="sweetness-button">Sweeter</label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" id="sweetness-button" name="sweetness" value="brighter">
+                                  <label class="form-check-label" for="sweetness-button">Brighter</label>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="button" onclick="calculate()">Calculate</button>
+              </form>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <div class="coffe-weight" id="coffe-weight"></div>
+            <div class="pour" id="init"><ul></ul></div>
+            <div class="pour" id="pour-over"><ul></ul></div>
+            <div class="timer">
+                <div class="container content">
+                    <h4>Timer</h4>
+
+                    <h3><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h3>
+                    <button class="btn btn-primary" id="button-start">Start</button>
+                    <button class="btn btn-primary" id="button-stop">Stop</button>
+                    <button class="btn btn-primary" id="button-reset">Reset</button>
+                </div> 
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="timer.js"></script>
+    <script src="index.js"></script>
+</body>
