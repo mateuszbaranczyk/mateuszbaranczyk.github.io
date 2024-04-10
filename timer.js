@@ -9,11 +9,11 @@ window.onload = function() {
   let seconds = 0;
   let tens = 0;
   let minutes = 0;
-  let first;
-  let second;
-  let third;
-  let fourth;
-  let fifth;
+  let firstPour;
+  let secondPour;
+  let thirdPour;
+  let fourthPour;
+  let fifthPour;
   let Interval;
 
   buttonStart.onclick = function() {
@@ -40,15 +40,16 @@ window.onload = function() {
   }
 
   function getRecipeElements() {
-    first = document.getElementById('first');
-    second = document.getElementById('second');
-    third = document.getElementById('third');
-    fourth = (document.getElementById('fourth') === undefined) ? null :
-      fourth;
-    fifth = (document.getElementById('fifth') === undefined) ?
+    firstPour = document.getElementById('firstPour');
+    secondPour = document.getElementById('secondPour');
+    thirdPour = document.getElementById('thirdPour');
+    fourthPour = (document.getElementById('fourthPour') === undefined) ?
       null :
-      fifth;
-    return [first, second, third, fourth, fifth]
+      fourthPour;
+    fifthPour = (document.getElementById('fifthPour') === undefined) ?
+      null :
+      fifthPour;
+    return [firstPour, secondPour, thirdPour, fourthPour, fifthPour]
   }
 
   function setActualPourStyle(div) {
@@ -70,11 +71,12 @@ window.onload = function() {
   }
 
   function startTimer() {
-    let [first, second, third, fourth, fifth] = getRecipeElements()
+    let [firstPour, secondPour, thirdPour, fourthPour, fifthPour] =
+    getRecipeElements()
 
     tens++;
     if (seconds === 0 && minutes === 0) {
-      setActualPourStyle(first)
+      setActualPourStyle(firstPour)
     };
     if (tens <= 9) {
       appendTens.innerHTML = "0" + tens;
@@ -98,7 +100,7 @@ window.onload = function() {
 
     if (seconds === 45 && minutes === 0) {
       clearStyles()
-      setActualPourStyle(second)
+      setActualPourStyle(secondPour)
     }
 
     if (seconds > 59) {
@@ -110,15 +112,15 @@ window.onload = function() {
 
     if (seconds === 30 && minutes === 1) {
       clearStyles()
-      setActualPourStyle(third)
+      setActualPourStyle(thirdPour)
     }
     if (seconds === 15 && minutes === 2) {
       clearStyles()
-      setActualPourStyle(fourth)
+      setActualPourStyle(fourthPour)
     }
     if (seconds === 45 && minutes === 2) {
       clearStyles()
-      setActualPourStyle(fifth)
+      setActualPourStyle(fifthPour)
     }
     if (seconds === 30 && minutes === 3) {
       clearStyles()
