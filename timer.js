@@ -13,14 +13,14 @@ window.onload = function() {
   var second;
   var third;
   var fourth;
-  var fiveth;
+  var fifth;
   var Interval;
 
   buttonStart.onclick = function() {
     clearInterval(Interval);
     Interval = setInterval(startTimer,
       10);
-    startTimer(first, second, third, fourth, fiveth)
+    startTimer(first, second, third, fourth, fifth)
   }
 
   buttonStop.onclick = function() {
@@ -36,8 +36,20 @@ window.onload = function() {
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
     appendMinutes.innerHTML = minutes;
+    clearStyle(first, second, third, fourth, fifth)
   }
 
+  function getRecipeElements() {
+    first = document.getElementById('first');
+    second = document.getElementById('second');
+    third = document.getElementById('third');
+    fourth = (document.getElementById('fourth') === undefined) ? null :
+      fourth;
+    fifth = (document.getElementById('fifth') === undefined) ?
+      null :
+      fifth;
+    return [first, second, third, fourth, fifth]
+  }
 
   function setStyle(div) {
     if (div) {
@@ -46,8 +58,8 @@ window.onload = function() {
     }
   }
 
-  function clearStyle(first, second, third, fourth, fiveth) {
-    let divs = [first, second, third, fourth, fiveth];
+  function clearStyle() {
+    let divs = getRecipeElements();
 
     function noneStyle(div) {
       if (typeof(div) === "object") {
@@ -59,20 +71,12 @@ window.onload = function() {
     divs.forEach((div) => noneStyle(div))
   }
 
-  function startTimer(first, second, third, fourth, fiveth) {
-    first = document.getElementById('first');
-    second = document.getElementById('second');
-    third = document.getElementById('third');
-    fourth = (document.getElementById('fourth') === undefined) ? null :
-      fourth;
-    fiveth = (document.getElementById('fiveth') === undefined) ?
-      null :
-      fiveth;
-
+  function startTimer() {
+    let [first, second, third, fourth, fifth] = getRecipeElements()
 
     tens++;
     if (seconds === 0 && minutes === 0) {
-      clearStyle(first, second, third, fourth, fiveth)
+      clearStyle()
       setStyle(first)
     };
     if (tens <= 9) {
@@ -96,7 +100,7 @@ window.onload = function() {
     }
 
     if (seconds === 45 && minutes === 0) {
-      clearStyle(first, second, third, fourth, fiveth)
+      clearStyle()
       setStyle(second)
     }
 
@@ -108,19 +112,19 @@ window.onload = function() {
     }
 
     if (seconds === 30 && minutes === 1) {
-      clearStyle(first, second, third, fourth, fiveth)
+      clearStyle()
       setStyle(third)
     }
     if (seconds === 15 && minutes === 2) {
-      clearStyle(first, second, third, fourth, fiveth)
+      clearStyle()
       setStyle(fourth)
     }
     if (seconds === 45 && minutes === 2) {
-      clearStyle(first, second, third, fourth, fiveth)
-      setStyle(fiveth)
+      clearStyle()
+      setStyle(fifth)
     }
     if (seconds === 30 && minutes === 3) {
-      clearStyle(first, second, third, fourth, fiveth)
+      clearStyle()
     }
 
   }
