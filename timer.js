@@ -1,14 +1,14 @@
 window.onload = function() {
 
-  let seconds = 0o0;
-  let tens = 0o0;
-  let minutes = 0o0;
-  let appendTens = document.getElementById("tens");
-  let appendSeconds = document.getElementById("seconds");
-  let appendMinutes = document.getElementById("minutes")
-  let buttonStart = document.getElementById('button-start');
-  let buttonStop = document.getElementById('button-stop');
-  let buttonReset = document.getElementById('button-reset');
+  const appendTens = document.getElementById("tens");
+  const appendSeconds = document.getElementById("seconds");
+  const appendMinutes = document.getElementById("minutes")
+  const buttonStart = document.getElementById('button-start');
+  const buttonStop = document.getElementById('button-stop');
+  const buttonReset = document.getElementById('button-reset');
+  let seconds = 0;
+  let tens = 0;
+  let minutes = 0;
   let first;
   let second;
   let third;
