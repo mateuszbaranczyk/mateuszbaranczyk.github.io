@@ -1,20 +1,20 @@
 window.onload = function() {
 
-  var seconds = 0o0;
-  var tens = 0o0;
-  var minutes = 0o0;
-  var appendTens = document.getElementById("tens");
-  var appendSeconds = document.getElementById("seconds");
-  var appendMinutes = document.getElementById("minutes")
-  var buttonStart = document.getElementById('button-start');
-  var buttonStop = document.getElementById('button-stop');
-  var buttonReset = document.getElementById('button-reset');
-  var first;
-  var second;
-  var third;
-  var fourth;
-  var fifth;
-  var Interval;
+  let seconds = 0o0;
+  let tens = 0o0;
+  let minutes = 0o0;
+  let appendTens = document.getElementById("tens");
+  let appendSeconds = document.getElementById("seconds");
+  let appendMinutes = document.getElementById("minutes")
+  let buttonStart = document.getElementById('button-start');
+  let buttonStop = document.getElementById('button-stop');
+  let buttonReset = document.getElementById('button-reset');
+  let first;
+  let second;
+  let third;
+  let fourth;
+  let fifth;
+  let Interval;
 
   buttonStart.onclick = function() {
     clearInterval(Interval);
