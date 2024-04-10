@@ -45,11 +45,15 @@ window.onload = function() {
     var first = document.getElementById('first') || null;
     var second = document.getElementById('second') || null;
     var third = document.getElementById('third') || null;
-    var fourth = document.getElementById('fourth') || null;
-    var fiveth = document.getElementById('fiveth') || null;
+    var fourth = (document.getElementById('fourth') === undefined) ? null :
+      fourth;
+    var fiveth = (document.getElementById('fiveth') === undefined) ?
+      null :
+      fiveth;
+
 
     function resetStyle() {
-      let divs = [first, seconds, second, third, fourth, fiveth];
+      let divs = [first, second, third, fourth, fiveth];
 
       function noneStyle(div) {
         if (typeof(div) === "object") {
