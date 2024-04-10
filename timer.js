@@ -9,13 +9,18 @@ window.onload = function() {
   var buttonStart = document.getElementById('button-start');
   var buttonStop = document.getElementById('button-stop');
   var buttonReset = document.getElementById('button-reset');
-
+  var first;
+  var second;
+  var third;
+  var fourth;
+  var fiveth;
   var Interval;
 
   buttonStart.onclick = function() {
-
     clearInterval(Interval);
-    Interval = setInterval(startTimer, 10);
+    Interval = setInterval(startTimer,
+      10);
+    startTimer(first, second, third, fourth, fiveth)
   }
 
   buttonStop.onclick = function() {
@@ -41,33 +46,33 @@ window.onload = function() {
     }
   }
 
-  function startTimer() {
-    var first = document.getElementById('first') || null;
-    var second = document.getElementById('second') || null;
-    var third = document.getElementById('third') || null;
-    var fourth = (document.getElementById('fourth') === undefined) ? null :
+  function clearStyle(first, second, third, fourth, fiveth) {
+    let divs = [first, second, third, fourth, fiveth];
+
+    function noneStyle(div) {
+      if (typeof(div) === "object") {
+        div.style.marginLeft = "initial";
+        div.style.fontWeight = "normal";
+      }
+    }
+
+    divs.forEach((div) => noneStyle(div))
+  }
+
+  function startTimer(first, second, third, fourth, fiveth) {
+    first = document.getElementById('first');
+    second = document.getElementById('second');
+    third = document.getElementById('third');
+    fourth = (document.getElementById('fourth') === undefined) ? null :
       fourth;
-    var fiveth = (document.getElementById('fiveth') === undefined) ?
+    fiveth = (document.getElementById('fiveth') === undefined) ?
       null :
       fiveth;
 
 
-    function resetStyle() {
-      let divs = [first, second, third, fourth, fiveth];
-
-      function noneStyle(div) {
-        if (typeof(div) === "object") {
-          div.style.marginLeft = "initial";
-          div.style.fontWeight = "normal";
-        }
-      }
-
-      divs.forEach((div) => noneStyle(div))
-    }
-
     tens++;
     if (seconds === 0 && minutes === 0) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
       setStyle(first)
     };
     if (tens <= 9) {
@@ -76,7 +81,6 @@ window.onload = function() {
 
     if (tens > 9) {
       appendTens.innerHTML = tens;
-
     }
 
     if (tens > 99) {
@@ -92,7 +96,7 @@ window.onload = function() {
     }
 
     if (seconds === 45 && minutes === 0) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
       setStyle(second)
     }
 
@@ -104,19 +108,19 @@ window.onload = function() {
     }
 
     if (seconds === 30 && minutes === 1) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
       setStyle(third)
     }
     if (seconds === 15 && minutes === 2) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
       setStyle(fourth)
     }
     if (seconds === 45 && minutes === 2) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
       setStyle(fiveth)
     }
     if (seconds === 30 && minutes === 3) {
-      resetStyle()
+      clearStyle(first, second, third, fourth, fiveth)
     }
 
   }
