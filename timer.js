@@ -36,7 +36,7 @@ window.onload = function() {
     appendTens.innerHTML = "00";
     appendSeconds.innerHTML = "00";
     appendMinutes.innerHTML = "00";
-    clearStyle()
+    clearStyles()
   }
 
   function getRecipeElements() {
@@ -51,14 +51,14 @@ window.onload = function() {
     return [first, second, third, fourth, fifth]
   }
 
-  function setStyle(div) {
+  function setActualPourStyle(div) {
     if (div) {
       div.style.marginLeft = "15px";
       div.style.fontWeight = "bold";
     }
   }
 
-  function clearStyle() {
+  function clearStyles() {
     let divs = getRecipeElements();
 
     function noneStyle(div) {
@@ -76,7 +76,7 @@ window.onload = function() {
 
     tens++;
     if (seconds === 0 && minutes === 0) {
-      setStyle(first)
+      setActualPourStyle(first)
     };
     if (tens <= 9) {
       appendTens.innerHTML = "0" + tens;
@@ -99,8 +99,8 @@ window.onload = function() {
     }
 
     if (seconds === 45 && minutes === 0) {
-      clearStyle()
-      setStyle(second)
+      clearStyles()
+      setActualPourStyle(second)
     }
 
     if (seconds > 59) {
@@ -111,19 +111,19 @@ window.onload = function() {
     }
 
     if (seconds === 30 && minutes === 1) {
-      clearStyle()
-      setStyle(third)
+      clearStyles()
+      setActualPourStyle(third)
     }
     if (seconds === 15 && minutes === 2) {
-      clearStyle()
-      setStyle(fourth)
+      clearStyles()
+      setActualPourStyle(fourth)
     }
     if (seconds === 45 && minutes === 2) {
-      clearStyle()
-      setStyle(fifth)
+      clearStyles()
+      setActualPourStyle(fifth)
     }
     if (seconds === 30 && minutes === 3) {
-      clearStyle()
+      clearStyles()
     }
 
   }
