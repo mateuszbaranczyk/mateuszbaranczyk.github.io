@@ -20,7 +20,7 @@ window.onload = function() {
     clearInterval(Interval);
     Interval = setInterval(startTimer,
       10);
-    startTimer(first, second, third, fourth, fifth)
+    startTimer()
   }
 
   buttonStop.onclick = function() {
@@ -30,13 +30,13 @@ window.onload = function() {
 
   buttonReset.onclick = function() {
     clearInterval(Interval);
-    tens = "00";
-    seconds = "00";
-    minutes = "00";
-    appendTens.innerHTML = tens;
-    appendSeconds.innerHTML = seconds;
-    appendMinutes.innerHTML = minutes;
-    clearStyle(first, second, third, fourth, fifth)
+    tens = 0o0;
+    seconds = 0o0;
+    minutes = 0o0;
+    appendTens.innerHTML = "00";
+    appendSeconds.innerHTML = "00";
+    appendMinutes.innerHTML = "00";
+    clearStyle()
   }
 
   function getRecipeElements() {
@@ -76,7 +76,6 @@ window.onload = function() {
 
     tens++;
     if (seconds === 0 && minutes === 0) {
-      clearStyle()
       setStyle(first)
     };
     if (tens <= 9) {
