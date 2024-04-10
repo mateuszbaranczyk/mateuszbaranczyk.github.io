@@ -1,16 +1,12 @@
-let weight;
-let strength;
-let sweetness;
-
 function calculate() {
-  weight = document.getElementById("weight").value;
-  strength = document.querySelector('input[name="strength"]:checked').value;
-  sweetness = document.querySelector('input[name="sweetness"]:checked').value;
+  let weight = document.getElementById("weight").value;
+  let strength = document.querySelector('input[name="strength"]:checked').value;
+  let sweetness = document.querySelector('input[name="sweetness"]:checked').value;
 
-  clearDivs()
-  getCoffeWeight(weight)
-  createInitialPour(sweetness, weight)
-  createPourOver(strength, weight)
+  clearDivs();
+  getCoffeWeight(weight);
+  createInitialPour(sweetness, weight);
+  createPourOver(strength, weight);
 }
 
 function getCoffeWeight(weight) {
@@ -48,8 +44,8 @@ function insertInitPourHtml(stPour, ndPour) {
 }
 
 function createPourOver(strength, weight) {
-  let restWater = Math.round(weight * 0.6)
-  let initPour = Math.round(weight * 0.4)
+  let restWater = Math.round(weight * 0.6);
+  let initPour = Math.round(weight * 0.4);
   if (strength === "soft") {
     document.getElementById("pour-over").innerHTML +=
       "<li id='thirdPour'> 3rd pour " + Math.round(restWater) +
@@ -79,18 +75,18 @@ function createPourOver(strength, weight) {
       " g total (2:45)</li>";
   }
   document.getElementById("pour-over").innerHTML +=
-    "<p>Remove the coffee dripper after 3:30</p>"
-  showTimer()
+    "<p>Remove the coffee dripper after 3:30</p>";
+  showTimer();
 }
 
 function clearDivs() {
-  document.getElementById("coffe-weight").innerHTML = ""
-  document.getElementById("init").innerHTML = ""
-  document.getElementById("pour-over").innerHTML = ""
+  document.getElementById("coffe-weight").innerHTML = "";
+  document.getElementById("init").innerHTML = "";
+  document.getElementById("pour-over").innerHTML = "";
 }
 
 function showTimer() {
-  let timer = document.getElementsByClassName("timer")
-  let div = Object.entries(timer)
+  let timer = document.getElementsByClassName("timer");
+  let div = Object.entries(timer);
   div.forEach((element) => { element[1].style.visibility = "visible" });
 }
