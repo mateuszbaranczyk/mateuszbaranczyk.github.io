@@ -61,14 +61,12 @@ window.onload = function() {
   function clearStyles() {
     let divs = getRecipeElements();
 
-    function noneStyle(div) {
+    divs.forEach((div) => {
       if (typeof(div) === "object") {
         div.style.marginLeft = "initial";
         div.style.fontWeight = "normal";
       }
-    }
-
-    divs.forEach((div) => noneStyle(div))
+    })
   }
 
   function startTimer() {
