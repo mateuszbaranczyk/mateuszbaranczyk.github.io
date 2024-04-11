@@ -14,6 +14,7 @@ window.onload = function() {
   let thirdPour;
   let fourthPour;
   let fifthPour;
+  let ending
   let Interval;
 
   buttonStart.onclick = function() {
@@ -45,7 +46,8 @@ window.onload = function() {
     thirdPour = document.getElementById('thirdPour');
     fourthPour = document.getElementById('fourthPour');
     fifthPour = document.getElementById('fifthPour')
-    return [firstPour, secondPour, thirdPour, fourthPour, fifthPour]
+    ending = document.getElementById("ending")
+    return [firstPour, secondPour, thirdPour, fourthPour, fifthPour, ending]
   }
 
   function setActualPourStyle(div) {
@@ -67,7 +69,7 @@ window.onload = function() {
   }
 
   function startTimer() {
-    let [firstPour, secondPour, thirdPour, fourthPour, fifthPour] =
+    let [firstPour, secondPour, thirdPour, fourthPour, fifthPour, ending] =
     getRecipeElements()
 
     tens++;
@@ -120,6 +122,7 @@ window.onload = function() {
     }
     if (seconds === 30 && minutes === 3) {
       clearStyles()
+      setActualPourStyle(ending)
     }
 
   }
