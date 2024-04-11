@@ -13,13 +13,13 @@
 <body class="d-flex h-100 text-center text-bg-dark">
 
   <div class="cover-container d-flex w-120 h-100 p-3 mx-auto flex-column">
+
     <header class="mb-auto">
       <header class="d-flex py-3 border-bottom ml-2">
         <div>
           <p class="fw-bold fs-1 text-start">Coffee timer</h1>
             <p class="text-secondary text-start">For V60 "4:6" method by Tetsu Kasuya.</p>
         </div>
-
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
           <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
@@ -27,7 +27,9 @@
     </header>
 
     <main class="d-flex px-4 row mb-2 mt-2">
+
       <div class="col">
+        <!-- form -->
         <form class="p-4 p-md-5 border rounded-3 bg-dark-gray mb-4">
           <p>How much coffee would you like?</p>
           <div class="form-floating mb-3 text-dark">
@@ -77,6 +79,7 @@
           <button class="btn btn-outline-success btn-lg px-4 me-sm-8 fw-bold" type="button" onclick="calculate()">Calculate</button>
         </form>
       </div>
+      <!-- recipe and timer -->
       <div class="col">
         <div class="coffe-weight" id="coffe-weight"></div>
         <ol>
