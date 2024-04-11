@@ -1,21 +1,27 @@
 window.onload = function() {
 
-  var seconds = 0o0;
-  var tens = 0o0;
-  var minutes = 0o0;
-  var appendTens = document.getElementById("tens");
-  var appendSeconds = document.getElementById("seconds");
-  var appendMinutes = document.getElementById("minutes")
-  var buttonStart = document.getElementById('button-start');
-  var buttonStop = document.getElementById('button-stop');
-  var buttonReset = document.getElementById('button-reset');
-
-  var Interval;
+  const appendTens = document.getElementById("tens");
+  const appendSeconds = document.getElementById("seconds");
+  const appendMinutes = document.getElementById("minutes")
+  const buttonStart = document.getElementById('button-start');
+  const buttonStop = document.getElementById('button-stop');
+  const buttonReset = document.getElementById('button-reset');
+  let seconds = 0;
+  let tens = 0;
+  let minutes = 0;
+  let firstPour;
+  let secondPour;
+  let thirdPour;
+  let fourthPour;
+  let fifthPour;
+  let ending
+  let Interval;
 
   buttonStart.onclick = function() {
-
     clearInterval(Interval);
-    Interval = setInterval(startTimer, 10);
+    Interval = setInterval(startTimer,
+      10);
+    startTimer()
   }
 
   buttonStop.onclick = function() {
@@ -25,50 +31,50 @@ window.onload = function() {
 
   buttonReset.onclick = function() {
     clearInterval(Interval);
-    tens = "00";
-    seconds = "00";
-    minutes = "00";
-    appendTens.innerHTML = tens;
-    appendSeconds.innerHTML = seconds;
-    appendMinutes.innerHTML = minutes;
+    tens = 0;
+    seconds = 0;
+    minutes = 0;
+    appendTens.innerHTML = "00";
+    appendSeconds.innerHTML = "00";
+    appendMinutes.innerHTML = "00";
+    clearStyles()
   }
 
+  function getRecipeElements() {
+    firstPour = document.getElementById('firstPour');
+    secondPour = document.getElementById('secondPour');
+    thirdPour = document.getElementById('thirdPour');
+    fourthPour = document.getElementById('fourthPour');
+    fifthPour = document.getElementById('fifthPour')
+    ending = document.getElementById("ending")
+    return [firstPour, secondPour, thirdPour, fourthPour, fifthPour, ending]
+  }
 
-  function setStyle(div) {
+  function setActualPourStyle(div) {
     if (div) {
       div.style.marginLeft = "15px";
       div.style.fontWeight = "bold";
     }
   }
 
-  function startTimer() {
-    var first = document.getElementById('first') || null;
-    var second = document.getElementById('second') || null;
-    var third = document.getElementById('third') || null;
-    var fourth = (document.getElementById('fourth') === undefined) ? null :
-      fourth;
-    var fiveth = (document.getElementById('fiveth') === undefined) ?
-      null :
-      fiveth;
+  function clearStyles() {
+    let divs = getRecipeElements();
 
-
-    function resetStyle() {
-      let divs = [first, second, third, fourth, fiveth];
-
-      function noneStyle(div) {
-        if (typeof(div) === "object") {
-          div.style.marginLeft = "initial";
-          div.style.fontWeight = "normal";
-        }
+    divs.forEach((div) => {
+      if (typeof(div) != "null") {
+        div.style.marginLeft = "initial";
+        div.style.fontWeight = "normal";
       }
+    })
+  }
 
-      divs.forEach((div) => noneStyle(div))
-    }
+  function startTimer() {
+    let [firstPour, secondPour, thirdPour, fourthPour, fifthPour, ending] =
+    getRecipeElements()
 
     tens++;
     if (seconds === 0 && minutes === 0) {
-      resetStyle()
-      setStyle(first)
+      setActualPourStyle(firstPour)
     };
     if (tens <= 9) {
       appendTens.innerHTML = "0" + tens;
@@ -76,7 +82,6 @@ window.onload = function() {
 
     if (tens > 9) {
       appendTens.innerHTML = tens;
-
     }
 
     if (tens > 99) {
@@ -92,8 +97,8 @@ window.onload = function() {
     }
 
     if (seconds === 45 && minutes === 0) {
-      resetStyle()
-      setStyle(second)
+      clearStyles()
+      setActualPourStyle(secondPour)
     }
 
     if (seconds > 59) {
@@ -104,19 +109,20 @@ window.onload = function() {
     }
 
     if (seconds === 30 && minutes === 1) {
-      resetStyle()
-      setStyle(third)
+      clearStyles()
+      setActualPourStyle(thirdPour)
     }
     if (seconds === 15 && minutes === 2) {
-      resetStyle()
-      setStyle(fourth)
+      clearStyles()
+      setActualPourStyle(fourthPour)
     }
     if (seconds === 45 && minutes === 2) {
-      resetStyle()
-      setStyle(fiveth)
+      clearStyles()
+      setActualPourStyle(fifthPour)
     }
     if (seconds === 30 && minutes === 3) {
-      resetStyle()
+      clearStyles()
+      setActualPourStyle(ending)
     }
 
   }
