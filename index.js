@@ -38,7 +38,7 @@ function insertInitPourHtml(stPour, ndPour) {
   document.getElementById("init").innerHTML += "<li id='firstPour'> 1st pour " +
     Math.round(stPour) + " grams of water (0:00)</li>";
   document.getElementById("init").innerHTML +=
-    "<li id='secondPourPour'> 2nd pour " +
+    "<li id='secondPour'> 2nd pour " +
     Math.round(ndPour) + " grams of water - " + Math.round(stPour + ndPour) +
     " g total (0:45)</li>";
 }
@@ -70,7 +70,7 @@ function createPourOver(strength, weight) {
       " grams of water - " + Math.round(initPour + restWater / 3 + restWater /
         3) + " g total (2:15)</li>";
     document.getElementById("pour-over").innerHTML +=
-      "<li id='fiveth'> 5th pour " + Math.round(restWater / 3) +
+      "<li id='fifthPour'> 5th pour " + Math.round(restWater / 3) +
       " grams of water - " + Math.round(initPour + restWater) +
       " g total (2:45)</li>";
   }

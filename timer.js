@@ -43,12 +43,8 @@ window.onload = function() {
     firstPour = document.getElementById('firstPour');
     secondPour = document.getElementById('secondPour');
     thirdPour = document.getElementById('thirdPour');
-    fourthPour = (document.getElementById('fourthPour') === undefined) ?
-      null :
-      fourthPour;
-    fifthPour = (document.getElementById('fifthPour') === undefined) ?
-      null :
-      fifthPour;
+    fourthPour = document.getElementById('fourthPour');
+    fifthPour = document.getElementById('fifthPour')
     return [firstPour, secondPour, thirdPour, fourthPour, fifthPour]
   }
 
@@ -63,7 +59,7 @@ window.onload = function() {
     let divs = getRecipeElements();
 
     divs.forEach((div) => {
-      if (typeof(div) === "object") {
+      if (typeof(div) != "null") {
         div.style.marginLeft = "initial";
         div.style.fontWeight = "normal";
       }
